@@ -198,3 +198,82 @@
     transform: rotate(15deg); 
   }
 }
+.lipstick{
+  width: 5vw;
+  height:15vw;
+  margin-left: 84vw;
+  margin-top: 23vw;
+  position: absolute;
+  z-index: 3;
+  animation: lipstick-move 2s ease-in-out infinite;
+}
+
+@keyframes lipstick-move{
+  from {
+    transform: translateX(-3vw);     
+  }
+  to {
+    transform: translateX(0vw); 
+  }
+}
+
+.gubi{
+  width: 5vw;
+  height:15vw;
+  margin-left: 81vw;
+  margin-top: 22vw;
+  position: absolute;
+  z-index: 2;
+}
+
+.blush{
+   opacity: 1;                     
+   animation: blush-pulse 1.5s ease-in-out infinite alternate;
+   position: absolute;
+   z-index: 2;
+}
+
+@keyframes blush-pulse {
+  from {
+    opacity: 0.2;                    
+  }
+  to {
+    opacity: 1;                       
+  }
+}
+.rumana{
+  width: 3vw;
+  height: 3vw;
+  margin-top: 28vw;
+  margin-left: 10vw;
+  position: absolute;
+  z-index: 2;
+
+}
+.rumana2{
+  width: 3vw;
+  height: 3vw;
+  margin-top: 28vw;
+  margin-left: 19vw;
+  position: absolute;
+  z-index: 2;
+}
+.kist{
+  margin-top: 19vw;
+  width: 8vw;
+  height: 19vw;
+  margin-left: 19vw;
+  position: absolute;
+  z-index: 2;
+  transform-origin: center center;             
+  animation: kist-swing 1s ease-in-out infinite alternate;
+}
+
+@keyframes kist-swing {
+  from {
+    transform: rotate(-10deg);                
+  }
+  to {
+    transform: rotate(10deg);                  
+  }
+}
