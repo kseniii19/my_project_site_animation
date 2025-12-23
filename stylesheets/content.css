@@ -1,16 +1,23 @@
-@font-face {
-    font-family: "Helvetica";
-    src: url("/fonts/helvetica_regular.otf") format(opentype);
-    font-weight: 150 ;
-    font-style: normal;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.fon1{
-    height: 60vw;
+html, body {
     width: 100vw;
-    overflow: hidden;
-    position: absolute;
-    z-index: 0;
+    min-height: 100vh; 
+    overflow-x: hidden;
+
+}
+
+@font-face {
+    font-family: "Helvetica";
+    src: url("../fonts/helvetica_regular.otf") format(opentype);
+    font-weight: 150 ;
+    font-style: normal;
 }
 
 .first_text_block{
@@ -21,10 +28,12 @@
 .first_block{
     overflow: hidden;
     white-space: nowrap; 
-    width: 100%;
+    width: 100vw;
     height: 60vw;
     position: relative; 
-    top: 0;
+    background-color: #AAD1E5;
+
+ 
 }
 .text1{
     display: inline-block;
@@ -34,11 +43,17 @@
     color: #0C255A;
     transition: color 0.4s ease;  
     flex-shrink: 0; 
+    margin-top: -1vw;
+    font-size: clamp(8vw, 12vw, 150px);  
 }
 
 @keyframes text1 {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0%   { 
+    transform: translateX(0);
+  }
+  100% {
+     transform: translateX(-50%); 
+    }
 }
 
 .text1:hover {
@@ -59,7 +74,7 @@
   animation-name: fall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-   width: 3vw;
+  width: 3vw;
   height: 5vw; 
 
 }
@@ -112,85 +127,115 @@
 .kaply38 { left: 63%;  animation-duration: 1.0s; animation-delay: 1.6s; }
 .kaply39 { left: 68%;  animation-duration: 1.5s; animation-delay: 2.1s; }
 
-
-
-.left_flower{
-    z-index: 2;
-    position: absolute;
-    margin-top: 19.8vw;
-    margin-left: 0.5vw;
-    width: 31vw;
-    height: 28vw;
+.left_buton {
+  position: absolute;
+  margin-top: 22vw;
+  margin-left: 0.5vw;
+  width: 31vw;
+  height: 28vw;
+  opacity: 1;
+  z-index: 2;
+  animation: buton 6s infinite;
 }
 
-.right_flower{
-    z-index: 2;
-    position: absolute;
-    margin-left: 68vw;
-    margin-top: 19.5vw;
-    width: 31vw;
-    height: 28vw;
+.left_flower {
+  position: absolute;
+  margin-top: 22vw;
+  margin-left: 0.5vw;
+  width: 31vw;
+  height: 28vw;
+  opacity: 0;
+  z-index: 3;
+  animation: flower 6s infinite;
+}
 
+.right_buton {
+  position: absolute;
+  margin-left: 68vw;
+  margin-top: 22vw;
+  width: 31vw;
+  height: 28vw;
+  opacity: 1;
+  z-index: 2;
+  animation: buton 6s infinite;
+}
+
+.right_flower {
+  position: absolute;
+  margin-left: 68vw;
+  margin-top: 22vw;
+  width: 31vw;
+  height: 28vw;
+  opacity: 0;
+  z-index: 3;
+  animation: flower 6s infinite;
 }
 
 .three_flowers {
   position: relative;
   height: 69%;
+  
 }
 
 .center_buton {
   position: absolute;
-  top: 68.5%;
-  left: 50.2%;
-  transform: translateX(-50%) translateY(-50%);
-  height: 41vw;
+  top: 17vw;
+  left: 32vw;
+  height: 32vw;
   width: 36vw;
   opacity: 1;
   z-index: 2;
-  animation: buton 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  animation: buton 6s infinite;
 }
 
 .center_flower {
   position: absolute;
-  top: 73%;
-  left: 50.2%;
-  transform: translateX(-50%) translateY(-50%) scale(0.6);
+  top: 17vw;
+  left: 32vw;
   width: 36vw;
   height: 34vw;
   opacity: 0;
   z-index: 3;
-  animation: flower 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  animation: flower 6s infinite;
 }
 
 @keyframes buton {
-  0%, 40% { 
+  0%  { 
     opacity: 1; 
-    height: 41vw; 
-    width: 36vw;
-    transform: translateX(-50%) translateY(-50%) scale(1) rotate(0deg);
+    transform: scale(1);
   }
-  45% { 
-    opacity: 0.6; 
-    height: 37vw; 
-    width: 35vw;
-    transform: translateX(-50%) translateY(-50%) scale(1.1) rotate(2deg);
+  33% { 
+    transform: scale(0.8);
+    opacity: 0.0; 
   }
-  50% { 
-    opacity: 0.2; 
-    height: 34vw; 
-    width: 36vw;
-    transform: translateX(-50%) translateY(-50%) scale(1.2) rotate(-1deg);
+  66% { 
+    transform: scale(0.8);
+    opacity: 0.0; 
   }
-  52%, 100% { 
-    opacity: 0; 
-    height: 34vw;
-    transform: translateX(-50%) translateY(-50%) scale(1.2) rotate(-1deg);
+  100%{
+    opacity: 1; 
+    transform: scale(1);
   }
 }
 
 @keyframes flower { 
-  0%, 45% { opacity: 0; transform: translateX(-50%) translateY(-50%) scale(0.8); transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.25); } 
-  65%, 100% { opacity: 1; transform: translateX(-50%) translateY(-50%) scale(1.1); transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.25); } }
+  0% { 
+    opacity: 0; 
+    transform: scale(0.8);
+  } 
+  33% { 
+    opacity: 1;
+    transform: scale(1);
+  } 
+  66% { 
+    opacity: 1;
+    transform: scale(1);
+  } 
+  100% { 
+    opacity: 0; 
+    transform: scale(0.8);
+  }  
+}
 
 
 .raschestka{
@@ -201,33 +246,71 @@
   width: 8vw;
   height: 12vw; 
   transform-origin: bottom center;  
-  animation: sway 2s ease-in-out infinite;
+  animation: sway 6s infinite;
 }
 
 @keyframes sway {
-  0%, 100% { 
-    transform: rotate(-15deg); 
+  0% {
+    opacity: 0;
+  } 
+  33% {
+    opacity: 0; 
   }
-  50% { 
-    transform: rotate(15deg); 
+  34% {
+    transform: rotate(-15deg);    
+    opacity: 1;  
+  }
+  50% {
+    transform: rotate(15deg);    
+    opacity: 1;  
+  }
+  66% {
+    transform: rotate(-15deg); 
+    opacity: 1;
+  }
+  67% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;    
   }
 }
+
 .lipstick{
   width: 5vw;
   height:15vw;
   margin-left: 84vw;
   margin-top: 23vw;
   position: absolute;
-  z-index: 3;
-  animation: lipstick-move 2s ease-in-out infinite;
+  opacity: 0;
+  z-index: 4;
+  animation: lipstick-move 6s infinite;
 }
 
 @keyframes lipstick-move{
-  from {
+  0% {
+    opacity: 0;
+  } 
+  33% {
+    opacity: 0; 
+  }
+  34% {
+    opacity: 1;
     transform: translateX(-3vw);     
   }
-  to {
+  50% {
     transform: translateX(0vw); 
+    opacity: 1;
+  }
+  66% {
+    transform: translateX(-3vw);
+    opacity: 1;
+  }
+  67% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;    
   }
 }
 
@@ -237,22 +320,60 @@
   margin-left: 81vw;
   margin-top: 22vw;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
+  opacity: 0;
+  animation: gubi-opacity 6s infinite;
+}
+
+@keyframes gubi-opacity{
+  0% {
+    opacity: 0;
+  } 
+  33% {
+    opacity: 0; 
+  }
+  34% {
+    opacity: 1;  
+  }
+  50% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  67% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .blush{
    opacity: 1;                     
-   animation: blush-pulse 1.5s ease-in-out infinite alternate;
+   animation: rumana-opacity 6s infinite;
    position: absolute;
-   z-index: 2;
+   z-index: 3;
 }
 
-@keyframes blush-pulse {
-  from {
-    opacity: 0.2;                    
+@keyframes rumana-opacity{
+  0% {
+    opacity: 0;
+  } 
+  33% {
+    opacity: 0; 
   }
-  to {
-    opacity: 1;                       
+  34% {
+    opacity: 0.2;  
+  }
+  66% {
+    opacity: 1;
+  }
+  67% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
 .rumana{
@@ -272,47 +393,66 @@
   position: absolute;
   z-index: 2;
 }
+
 .kist{
   margin-top: 19vw;
   width: 8vw;
   height: 19vw;
   margin-left: 19vw;
   position: absolute;
-  z-index: 2;
+  z-index: 4;
   transform-origin: center center;             
-  animation: kist-swing 1s ease-in-out infinite alternate;
+  animation: kist-swing 6s infinite;
 }
 
 @keyframes kist-swing {
-  from {
-    transform: rotate(-10deg);                
+  0% {
+    opacity: 0;
+  } 
+  33% {
+    opacity: 0; 
   }
-  to {
-    transform: rotate(10deg);                  
+  34% {
+    transform: rotate(-10deg);    
+    opacity: 1;  
+  }
+  50% {
+    transform: rotate(10deg);    
+    opacity: 1;  
+  }
+  66% {
+    transform: rotate(-10deg); 
+    opacity: 1;
+  }
+  67% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;    
   }
 }
 
-.second_block{
-    overflow-x: hidden;
-    white-space: nowrap; 
-    width: 100%;
-    height: 110vw;
-    position: relative; 
+.second_block {
+  width: 100vw;
+  height: 94vw;  
+  display: flex;
+  flex-wrap: wrap;
 }
 .shesterenki{
   width: 50vw;
   height: 61vw;
   position: relative;
   background-color: #EADA9D;
-  margin-left: 0.1vw;
+ 
 }
+
 .round1 {
   position: absolute;
   width: 31vw;
   height: 32vw;
   top: 26vw;
   left: 15vw; 
-  animation: rotate-right 6s linear infinite;
+  animation: rotate-right 5s linear infinite;
 }
 
 .round2 {
@@ -321,27 +461,40 @@
   position: absolute;
   top: 2vw;
   left: 2vw;
-  animation: rotate-left 6s linear infinite;
+  animation: rotate-left 5s linear infinite;
 }
 
 @keyframes rotate-right {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% { 
+    transform: rotate(0deg);
+   }
+  100% { 
+    transform: rotate(360deg);
+   }
 }
 
 @keyframes rotate-left {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(-360deg); } 
+  0% { 
+    transform: rotate(0deg);
+   }
+  100% { 
+    transform: rotate(-360deg);
+   } 
 }
 
-.stebel_flower{
+.shesterenki:hover .round1, .shesterenki:hover .round2 {
+  animation-duration: 3s; 
+}
+
+.stebel_flower {
   width: 50vw;
   height: 30vw;
   background-color: #9AC57C;
-  position: absolute;
-  margin-left: 50vw;
-  margin-top: -61vw;
+  margin: 0;
+  position: relative;  
+  z-index: 4;
 }
+
 .stebel{
   width: 44vw;
   height: 22vw;
@@ -355,15 +508,25 @@
   height: 10vw;
   position: absolute;
   z-index: 2;
-  top: 3vw;
-  left: 6vw;
-  animation: move_tsvetok 12s linear 0s infinite;
-  offset-path: path("M548.61 161.926C548.61 161.814 548.61 161.703 548.61 161.591C548.61 117.604 543.158 78.1321 534.561 49.9551C530.245 35.8109 525.288 25.0199 520.198 17.9639C514.958 10.6993 510.82 9.00017 508.306 9C505.792 9 501.653 10.6989 496.412 17.9639C491.322 25.0199 486.366 35.811 482.05 49.9551C473.452 78.1321 468 117.604 468 161.591C468 161.702 468.001 161.814 468.001 161.926L467.957 161.926C466.628 245.37 444.137 311.811 418.391 313.016L417.755 313.032C392.139 313.159 370.679 248.801 367.863 166.525L367.798 166.525C367.798 166.356 367.798 166.186 367.798 166.017C367.798 165.477 367.797 164.938 367.795 164.399C367.668 160.206 367.59 155.968 367.562 151.69C367.56 151.53 367.559 151.369 367.558 151.208L367.595 151.207C366.515 111.983 361.193 77.0332 353.3 51.2607C348.846 36.718 343.724 25.6048 338.452 18.3252C333.034 10.8424 328.692 9.00002 325.949 8.99999C323.206 9.00031 318.865 10.8428 313.446 18.3252C308.175 25.6048 303.054 36.7182 298.6 51.2607C289.986 79.3847 284.436 118.437 284.117 162.047L284.436 162.046C284.436 162.108 284.437 162.171 284.437 162.233L284.446 164.322C284.647 251.913 261.357 323.108 234.563 324.356L233.925 324.373C206.651 324.508 184.456 252.021 183.872 162.779L183.87 162.548L184.104 162.546C183.855 119.79 178.292 81.4984 169.636 53.9912C165.19 39.8632 160.085 29.0838 154.838 22.0312C149.467 14.8117 145.118 12.9609 142.266 12.9609C139.413 12.9612 135.065 14.8122 129.694 22.0312C124.447 29.0838 119.341 39.8632 114.896 53.9912C106.286 81.3511 100.737 119.38 100.433 161.859L100.562 161.858C100.562 161.921 100.564 161.985 100.564 162.048L100.584 164.137C101.226 252.421 77.9202 324.14 50.8603 324.378C23.5875 324.617 1.03084 252.215 0.001946 162.977C0.00104536 162.898 0.000859883 162.82 -7.11369e-06 162.742L8.99902 162.663C8.99988 162.741 9.00105 162.819 9.00195 162.897C9.50922 206.895 15.3305 246.388 24.1758 274.558C28.6161 288.699 33.6618 299.475 38.8096 306.506C44.1089 313.744 48.2504 315.401 50.7568 315.379C53.3376 315.356 57.6136 313.538 62.999 306.148C68.2156 298.991 73.3124 288.098 77.7314 273.894C86.2854 246.397 91.7518 208.288 91.5937 165.887L91.4189 165.887C91.4189 165.775 91.418 165.663 91.418 165.552L91.4219 163.463C91.771 75.8773 114.048 5.08511 141.608 3.97459L142.266 3.96092C170.348 3.96092 193.114 76.3079 193.114 165.552L193.114 165.887L192.902 165.887C193.431 208.619 198.992 246.924 207.488 274.451C211.858 288.609 216.85 299.405 221.963 306.455C227.226 313.713 231.36 315.385 233.866 315.373C236.447 315.36 240.732 313.558 246.154 306.189C251.406 299.052 256.556 288.179 261.046 273.991C269.704 246.633 275.351 208.731 275.447 166.525L275.104 166.525C275.103 166.356 275.102 166.186 275.102 166.017C275.102 75.0453 297.513 1.1638 325.292 0.0136617L325.949 -1.01262e-05C353.855 0.000112491 376.51 73.3922 376.795 164.281C377.98 203.162 383.388 237.803 391.294 263.217C395.688 277.341 400.699 288.109 405.818 295.14C411.093 302.383 415.219 304.044 417.696 304.032C420.223 304.02 424.473 302.243 429.873 294.867C435.099 287.729 440.226 276.855 444.693 262.664C453.596 234.387 459.297 194.85 459.01 150.939C459.009 150.877 459.008 150.814 459.008 150.752L459.11 150.751C460.812 66.5613 482.187 -3.29687e-06 508.306 -2.15518e-06C535.536 0.000661187 557.61 72.3473 557.61 161.591L557.61 161.926L548.61 161.926");
+  top: 8vw;
+  left: 4vw;
+  rotate: 90deg;
+  transform: scaleX(-1);
+  transform-origin: center center;
+  animation: move_tsvetok1 3s ease-in-out infinite ;
 }
 
-@keyframes move_tsvetok{
-  0%   { offset-distance: 0%; }
-  100% { offset-distance: 100%; }
+
+@keyframes move_tsvetok1{
+  0%   { 
+    transform: scaleX(-1) translateX(6vw); 
+  }   
+  50%  { 
+    transform: scaleX(-1) translateX(-10vw) translateY(2vw);
+  } 
+  100% { 
+    transform: scaleX(-1) translateX(6vw); 
+  } 
 }
 
 .tsvetok2{
@@ -371,10 +534,23 @@
   height: 10vw;
   position: absolute;
   z-index: 2;
-  top: 3vw;
-  left: 6vw;
-  animation: move_tsvetok 12s linear 3s infinite;
-  offset-path: path("M548.61 161.926C548.61 161.814 548.61 161.703 548.61 161.591C548.61 117.604 543.158 78.1321 534.561 49.9551C530.245 35.8109 525.288 25.0199 520.198 17.9639C514.958 10.6993 510.82 9.00017 508.306 9C505.792 9 501.653 10.6989 496.412 17.9639C491.322 25.0199 486.366 35.811 482.05 49.9551C473.452 78.1321 468 117.604 468 161.591C468 161.702 468.001 161.814 468.001 161.926L467.957 161.926C466.628 245.37 444.137 311.811 418.391 313.016L417.755 313.032C392.139 313.159 370.679 248.801 367.863 166.525L367.798 166.525C367.798 166.356 367.798 166.186 367.798 166.017C367.798 165.477 367.797 164.938 367.795 164.399C367.668 160.206 367.59 155.968 367.562 151.69C367.56 151.53 367.559 151.369 367.558 151.208L367.595 151.207C366.515 111.983 361.193 77.0332 353.3 51.2607C348.846 36.718 343.724 25.6048 338.452 18.3252C333.034 10.8424 328.692 9.00002 325.949 8.99999C323.206 9.00031 318.865 10.8428 313.446 18.3252C308.175 25.6048 303.054 36.7182 298.6 51.2607C289.986 79.3847 284.436 118.437 284.117 162.047L284.436 162.046C284.436 162.108 284.437 162.171 284.437 162.233L284.446 164.322C284.647 251.913 261.357 323.108 234.563 324.356L233.925 324.373C206.651 324.508 184.456 252.021 183.872 162.779L183.87 162.548L184.104 162.546C183.855 119.79 178.292 81.4984 169.636 53.9912C165.19 39.8632 160.085 29.0838 154.838 22.0312C149.467 14.8117 145.118 12.9609 142.266 12.9609C139.413 12.9612 135.065 14.8122 129.694 22.0312C124.447 29.0838 119.341 39.8632 114.896 53.9912C106.286 81.3511 100.737 119.38 100.433 161.859L100.562 161.858C100.562 161.921 100.564 161.985 100.564 162.048L100.584 164.137C101.226 252.421 77.9202 324.14 50.8603 324.378C23.5875 324.617 1.03084 252.215 0.001946 162.977C0.00104536 162.898 0.000859883 162.82 -7.11369e-06 162.742L8.99902 162.663C8.99988 162.741 9.00105 162.819 9.00195 162.897C9.50922 206.895 15.3305 246.388 24.1758 274.558C28.6161 288.699 33.6618 299.475 38.8096 306.506C44.1089 313.744 48.2504 315.401 50.7568 315.379C53.3376 315.356 57.6136 313.538 62.999 306.148C68.2156 298.991 73.3124 288.098 77.7314 273.894C86.2854 246.397 91.7518 208.288 91.5937 165.887L91.4189 165.887C91.4189 165.775 91.418 165.663 91.418 165.552L91.4219 163.463C91.771 75.8773 114.048 5.08511 141.608 3.97459L142.266 3.96092C170.348 3.96092 193.114 76.3079 193.114 165.552L193.114 165.887L192.902 165.887C193.431 208.619 198.992 246.924 207.488 274.451C211.858 288.609 216.85 299.405 221.963 306.455C227.226 313.713 231.36 315.385 233.866 315.373C236.447 315.36 240.732 313.558 246.154 306.189C251.406 299.052 256.556 288.179 261.046 273.991C269.704 246.633 275.351 208.731 275.447 166.525L275.104 166.525C275.103 166.356 275.102 166.186 275.102 166.017C275.102 75.0453 297.513 1.1638 325.292 0.0136617L325.949 -1.01262e-05C353.855 0.000112491 376.51 73.3922 376.795 164.281C377.98 203.162 383.388 237.803 391.294 263.217C395.688 277.341 400.699 288.109 405.818 295.14C411.093 302.383 415.219 304.044 417.696 304.032C420.223 304.02 424.473 302.243 429.873 294.867C435.099 287.729 440.226 276.855 444.693 262.664C453.596 234.387 459.297 194.85 459.01 150.939C459.009 150.877 459.008 150.814 459.008 150.752L459.11 150.751C460.812 66.5613 482.187 -3.29687e-06 508.306 -2.15518e-06C535.536 0.000661187 557.61 72.3473 557.61 161.591L557.61 161.926L548.61 161.926");
+  top: 8vw;
+  left: 17vw;
+  rotate: 90deg;
+  transform: scaleX(-1);
+  animation: move_tsvetok2 2.5s ease-in-out infinite ;
+}
+
+@keyframes move_tsvetok2{
+  0%   { 
+    transform: scaleX(-1) translateX(6vw); 
+  }   
+  50%  { 
+    transform: scaleX(-1) translateX(-10vw) translateY(2vw);
+  } 
+  100% { 
+    transform: scaleX(-1) translateX(6vw); 
+  } 
 }
 
 .tsvetok3{
@@ -382,29 +558,30 @@
   height: 10vw;
   position: absolute;
   z-index: 2;
-  top: 3vw;
-  left: 6vw;
-  animation: move_tsvetok 14s linear 5s infinite;
-  offset-path: path("M548.61 161.926C548.61 161.814 548.61 161.703 548.61 161.591C548.61 117.604 543.158 78.1321 534.561 49.9551C530.245 35.8109 525.288 25.0199 520.198 17.9639C514.958 10.6993 510.82 9.00017 508.306 9C505.792 9 501.653 10.6989 496.412 17.9639C491.322 25.0199 486.366 35.811 482.05 49.9551C473.452 78.1321 468 117.604 468 161.591C468 161.702 468.001 161.814 468.001 161.926L467.957 161.926C466.628 245.37 444.137 311.811 418.391 313.016L417.755 313.032C392.139 313.159 370.679 248.801 367.863 166.525L367.798 166.525C367.798 166.356 367.798 166.186 367.798 166.017C367.798 165.477 367.797 164.938 367.795 164.399C367.668 160.206 367.59 155.968 367.562 151.69C367.56 151.53 367.559 151.369 367.558 151.208L367.595 151.207C366.515 111.983 361.193 77.0332 353.3 51.2607C348.846 36.718 343.724 25.6048 338.452 18.3252C333.034 10.8424 328.692 9.00002 325.949 8.99999C323.206 9.00031 318.865 10.8428 313.446 18.3252C308.175 25.6048 303.054 36.7182 298.6 51.2607C289.986 79.3847 284.436 118.437 284.117 162.047L284.436 162.046C284.436 162.108 284.437 162.171 284.437 162.233L284.446 164.322C284.647 251.913 261.357 323.108 234.563 324.356L233.925 324.373C206.651 324.508 184.456 252.021 183.872 162.779L183.87 162.548L184.104 162.546C183.855 119.79 178.292 81.4984 169.636 53.9912C165.19 39.8632 160.085 29.0838 154.838 22.0312C149.467 14.8117 145.118 12.9609 142.266 12.9609C139.413 12.9612 135.065 14.8122 129.694 22.0312C124.447 29.0838 119.341 39.8632 114.896 53.9912C106.286 81.3511 100.737 119.38 100.433 161.859L100.562 161.858C100.562 161.921 100.564 161.985 100.564 162.048L100.584 164.137C101.226 252.421 77.9202 324.14 50.8603 324.378C23.5875 324.617 1.03084 252.215 0.001946 162.977C0.00104536 162.898 0.000859883 162.82 -7.11369e-06 162.742L8.99902 162.663C8.99988 162.741 9.00105 162.819 9.00195 162.897C9.50922 206.895 15.3305 246.388 24.1758 274.558C28.6161 288.699 33.6618 299.475 38.8096 306.506C44.1089 313.744 48.2504 315.401 50.7568 315.379C53.3376 315.356 57.6136 313.538 62.999 306.148C68.2156 298.991 73.3124 288.098 77.7314 273.894C86.2854 246.397 91.7518 208.288 91.5937 165.887L91.4189 165.887C91.4189 165.775 91.418 165.663 91.418 165.552L91.4219 163.463C91.771 75.8773 114.048 5.08511 141.608 3.97459L142.266 3.96092C170.348 3.96092 193.114 76.3079 193.114 165.552L193.114 165.887L192.902 165.887C193.431 208.619 198.992 246.924 207.488 274.451C211.858 288.609 216.85 299.405 221.963 306.455C227.226 313.713 231.36 315.385 233.866 315.373C236.447 315.36 240.732 313.558 246.154 306.189C251.406 299.052 256.556 288.179 261.046 273.991C269.704 246.633 275.351 208.731 275.447 166.525L275.104 166.525C275.103 166.356 275.102 166.186 275.102 166.017C275.102 75.0453 297.513 1.1638 325.292 0.0136617L325.949 -1.01262e-05C353.855 0.000112491 376.51 73.3922 376.795 164.281C377.98 203.162 383.388 237.803 391.294 263.217C395.688 277.341 400.699 288.109 405.818 295.14C411.093 302.383 415.219 304.044 417.696 304.032C420.223 304.02 424.473 302.243 429.873 294.867C435.099 287.729 440.226 276.855 444.693 262.664C453.596 234.387 459.297 194.85 459.01 150.939C459.009 150.877 459.008 150.814 459.008 150.752L459.11 150.751C460.812 66.5613 482.187 -3.29687e-06 508.306 -2.15518e-06C535.536 0.000661187 557.61 72.3473 557.61 161.591L557.61 161.926L548.61 161.926");
+  top: 8vw;
+  left: 29vw;
+  rotate: 90deg;
+  animation: move_tsvetok3 4s ease-in-out infinite ;
 }
 
-.tsvetok4{
-  width: 18vw;
-  height: 10vw;
-  position: absolute;
-  z-index: 2;
-  top: 3vw;
-  left: 6vw;
-  animation: move_tsvetok 14s linear 7s infinite;
-  offset-path: path("M548.61 161.926C548.61 161.814 548.61 161.703 548.61 161.591C548.61 117.604 543.158 78.1321 534.561 49.9551C530.245 35.8109 525.288 25.0199 520.198 17.9639C514.958 10.6993 510.82 9.00017 508.306 9C505.792 9 501.653 10.6989 496.412 17.9639C491.322 25.0199 486.366 35.811 482.05 49.9551C473.452 78.1321 468 117.604 468 161.591C468 161.702 468.001 161.814 468.001 161.926L467.957 161.926C466.628 245.37 444.137 311.811 418.391 313.016L417.755 313.032C392.139 313.159 370.679 248.801 367.863 166.525L367.798 166.525C367.798 166.356 367.798 166.186 367.798 166.017C367.798 165.477 367.797 164.938 367.795 164.399C367.668 160.206 367.59 155.968 367.562 151.69C367.56 151.53 367.559 151.369 367.558 151.208L367.595 151.207C366.515 111.983 361.193 77.0332 353.3 51.2607C348.846 36.718 343.724 25.6048 338.452 18.3252C333.034 10.8424 328.692 9.00002 325.949 8.99999C323.206 9.00031 318.865 10.8428 313.446 18.3252C308.175 25.6048 303.054 36.7182 298.6 51.2607C289.986 79.3847 284.436 118.437 284.117 162.047L284.436 162.046C284.436 162.108 284.437 162.171 284.437 162.233L284.446 164.322C284.647 251.913 261.357 323.108 234.563 324.356L233.925 324.373C206.651 324.508 184.456 252.021 183.872 162.779L183.87 162.548L184.104 162.546C183.855 119.79 178.292 81.4984 169.636 53.9912C165.19 39.8632 160.085 29.0838 154.838 22.0312C149.467 14.8117 145.118 12.9609 142.266 12.9609C139.413 12.9612 135.065 14.8122 129.694 22.0312C124.447 29.0838 119.341 39.8632 114.896 53.9912C106.286 81.3511 100.737 119.38 100.433 161.859L100.562 161.858C100.562 161.921 100.564 161.985 100.564 162.048L100.584 164.137C101.226 252.421 77.9202 324.14 50.8603 324.378C23.5875 324.617 1.03084 252.215 0.001946 162.977C0.00104536 162.898 0.000859883 162.82 -7.11369e-06 162.742L8.99902 162.663C8.99988 162.741 9.00105 162.819 9.00195 162.897C9.50922 206.895 15.3305 246.388 24.1758 274.558C28.6161 288.699 33.6618 299.475 38.8096 306.506C44.1089 313.744 48.2504 315.401 50.7568 315.379C53.3376 315.356 57.6136 313.538 62.999 306.148C68.2156 298.991 73.3124 288.098 77.7314 273.894C86.2854 246.397 91.7518 208.288 91.5937 165.887L91.4189 165.887C91.4189 165.775 91.418 165.663 91.418 165.552L91.4219 163.463C91.771 75.8773 114.048 5.08511 141.608 3.97459L142.266 3.96092C170.348 3.96092 193.114 76.3079 193.114 165.552L193.114 165.887L192.902 165.887C193.431 208.619 198.992 246.924 207.488 274.451C211.858 288.609 216.85 299.405 221.963 306.455C227.226 313.713 231.36 315.385 233.866 315.373C236.447 315.36 240.732 313.558 246.154 306.189C251.406 299.052 256.556 288.179 261.046 273.991C269.704 246.633 275.351 208.731 275.447 166.525L275.104 166.525C275.103 166.356 275.102 166.186 275.102 166.017C275.102 75.0453 297.513 1.1638 325.292 0.0136617L325.949 -1.01262e-05C353.855 0.000112491 376.51 73.3922 376.795 164.281C377.98 203.162 383.388 237.803 391.294 263.217C395.688 277.341 400.699 288.109 405.818 295.14C411.093 302.383 415.219 304.044 417.696 304.032C420.223 304.02 424.473 302.243 429.873 294.867C435.099 287.729 440.226 276.855 444.693 262.664C453.596 234.387 459.297 194.85 459.01 150.939C459.009 150.877 459.008 150.814 459.008 150.752L459.11 150.751C460.812 66.5613 482.187 -3.29687e-06 508.306 -2.15518e-06C535.536 0.000661187 557.61 72.3473 557.61 161.591L557.61 161.926L548.61 161.926");
+@keyframes move_tsvetok3{
+  0%   { 
+    transform: scaleX(-1) translateX(6vw); 
+  }   
+  50%  { 
+    transform: scaleX(-1) translateX(-10vw) translateY(2vw);
+  } 
+  100% { 
+    transform: scaleX(-1) translateX(6vw); 
+  } 
 }
 
 .falling_objects{
-  width: 50vw;
+  width: 56vw;
   height: 65vw;
   background-color: #AAD1E5;
   margin-left: 50vw;
-  margin-top: -32vw;
+  margin-top: 0vw;
   position: relative;
   overflow: hidden;
 }
@@ -415,7 +592,7 @@
 
 .item {
   position: absolute;
-  top: -15%;
+  top: 0vw;
   width: 8vw;
   height: 8vw;
   animation-name: fall;
@@ -490,7 +667,7 @@
   animation-name: costumes-rotate;
   animation-delay: 0s;
   margin-left: 26vw;
-  margin-top: 4vw;
+  margin-top: 5vw;
   width: 16vw;
   height: 26vw;
   
@@ -500,7 +677,7 @@
   animation-delay: 0.3s;
   animation-direction: alternate-reverse;
   margin-left: 18vw;
-  margin-top: 3.5vw;
+  margin-top: 4.5vw;
   width: 16vw;
   height: 26vw;
   
@@ -509,7 +686,7 @@
   animation-name: costumes-rotate;
   animation-delay: 0.6s;
   margin-left: 10vw;
-  margin-top: 3vw;
+  margin-top: 4vw;
   width: 16vw;
   height: 26vw;
 }
@@ -518,22 +695,616 @@
   animation-delay: 0.9s;
   animation-direction: alternate-reverse;
   margin-left: 5vw;
-  margin-top: 2.5vw;
+  margin-top: 3.5vw;
   width: 16vw;
   height: 26vw;
 }
 
 @keyframes costumes-rotate{
-  0%   { transform: rotate(-10deg);}
-  25%  { transform: rotate(7deg);}
-  50%  { transform: rotate(-9deg);}
-  75%  { transform: rotate(6deg);}
-  100% { transform: rotate(-8deg);} 
+  0%   {
+     transform: rotate(-10deg);
+    }
+  25%  { 
+    transform: rotate(7deg);
+  }
+  50%  { 
+    transform: rotate(-9deg);
+  }
+  75%  {
+     transform: rotate(6deg);
+    }
+  100% {
+     transform: rotate(-8deg);
+    } 
 }
 
 .veshalka{
-  margin-left: 8vw;
-  margin-top: -1vw;
+  position: absolute;
+  left: 7vw;
+  top: 0vw;
   width: 30vw;
   height: 10vw;
 }
+
+.third_block {
+  overflow: hidden;
+  width: 100vw;
+  height: 28vw;
+  background: #F9E1F1;
+}
+
+.flower_line {
+  width: 100%;
+  height: 31vw;
+}
+
+.flower_track {
+  display: flex;
+  gap: 22vw;
+  animation: scroll 3s linear infinite;
+  margin-top: 3vw;
+}
+
+.third_block:hover .flower_track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.flower_line_flower1,
+.flower_line_flower2,
+.flower_line_flower3,
+.flower_line_flower4,
+.flower_line_flower5,
+.flower_line_flower6,
+.flower_line_flower7,
+.flower_line_flower8,
+.flower_line_flower9,
+.flower_line_flower10,
+.flower_line_flower11,
+.flower_line_flower12,
+.flower_line_flower13 {
+  position: relative; 
+  width: 21vw;
+  height: 26vw;
+}
+
+.flower {
+  position: absolute;
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.basic {
+  opacity: 1;
+  z-index: 2;
+  width: 21vw;
+  height: 26vw;
+}
+
+.hover_flower {
+  opacity: 0;
+  z-index: 1;
+  width: 21vw;
+  height: 26vw;
+}
+
+.flower_line_flower1:hover .basic, .flower_line_flower2:hover .basic, .flower_line_flower3:hover .basic, .flower_line_flower4:hover .basic, .flower_line_flower5:hover .basic, .flower_line_flower6:hover .basic, .flower_line_flower7:hover .basic, .flower_line_flower8:hover .basic, .flower_line_flower9:hover .basic, .flower_line_flower10:hover .basic, .flower_line_flower11:hover .basic, .flower_line_flower12:hover .basic, .flower_line_flower13:hover .basic {
+  opacity: 0;
+}
+
+.flower_line_flower1:hover .hover_flower, .flower_line_flower2:hover .hover_flower, .flower_line_flower3:hover .hover_flower, .flower_line_flower4:hover .hover_flower, .flower_line_flower5:hover .hover_flower, .flower_line_flower6:hover .hover_flower, .flower_line_flower7:hover .hover_flower, .flower_line_flower8:hover .hover_flower, .flower_line_flower9:hover .hover_flower, .flower_line_flower10:hover .hover_flower, .flower_line_flower11:hover .hover_flower, .flower_line_flower12:hover .hover_flower, .flower_line_flower13:hover .hover_flower {
+  opacity: 1;
+}
+
+.fourth_block{
+  width: 50vw;
+  height: 50vw;
+  background-color: #EADA9D;
+  position: relative;
+  display: flex;
+  align-items: flex-start; 
+  justify-content: flex-start;
+}
+
+.flower_flash_blur {
+  width: 41vw;
+  height: 42vw;
+  animation: flash_blur 3s infinite ease-in-out;
+  display: flex;
+  margin-left: 7vw;
+  margin-top: 5vw;
+}
+
+  @keyframes flash_blur {
+ 0% {
+   opacity: 1;       
+   filter: blur(0); 
+  }
+  25% {
+    opacity: 0.3;     
+    filter: blur(5px); 
+  }
+  50% {
+    opacity: 1;
+    filter: blur(5px);
+  }
+  75% {
+    opacity: 1;
+    filter: blur(0); 
+  }
+  100% { 
+    opacity: 1;       
+    filter: blur(0);  
+  }
+}
+
+.obectiv {
+  position: absolute;
+  width: 46vw;
+  height: 42vw;
+  z-index: 2;
+  top: 4vw;
+  left: 2vw;
+  display: flex;       
+}
+
+.projector {
+  width: 50vw;
+  height: 50vw;
+  flex: 0 0 auto;
+  background-color: #AAD1E5;
+  display: flex;
+  margin-left: 2vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.projector_flower {
+  width: 35vw;
+  height: 38vw;
+  margin-left: 7.5vw;
+  margin-top: 9vw;
+  transform-origin: bottom center;
+  position: absolute;
+  z-index: 1;
+  animation: grow 5s ease-out infinite; 
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0.7) translateY(10px);
+    opacity: 0;
+  }
+
+  15% {
+    transform: scale(0.7) translateY(10px);
+    opacity: 0;
+  } 
+  
+  25% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+
+  35% {
+    transform: scale(1.05) translateY(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.7) translateY(10px);
+    opacity: 0;
+  }
+
+  65% {
+    transform: scale(0.7) translateY(10px);
+    opacity: 0;
+  }
+
+  75% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+
+  85% {
+    transform: scale(1.05) translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.7) translateY(10px);
+    opacity: 0;
+  }
+}
+
+.fonar{
+  width: 40vw;
+  height: 60vw;
+  margin-top: -5.5vw;
+  margin-left: 25vw;
+  position: absolute;
+  z-index: 2;
+  transform: translateX(-50%);
+  transform-origin: top center;                 
+  animation: swing 5s ease-in-out infinite;  
+}
+
+@keyframes swing {
+  0%   { transform: translateX(-50%) rotate(-12deg); }
+  20%  { transform: translateX(-50%) rotate(0deg); }  
+  30%  { transform: translateX(-50%) rotate(0deg); }  
+  50%  { transform: translateX(-50%) rotate(12deg); }  
+  70%  { transform: translateX(-50%) rotate(0deg); }   
+  80%  { transform: translateX(-50%) rotate(0deg); }   
+  100% { transform: translateX(-50%) rotate(-12deg); } 
+}
+
+
+.fifth_block{
+  width: 100vw;
+  height: 60vw;
+  background-color: #F9E1F1;
+  position: relative;
+}
+
+.left_crug_listia{
+  margin-left: 3vw;
+  margin-top: 14vw;
+  position: absolute;
+  animation: small-swing 3s ease-in-out infinite;
+  width: 33vw;
+  height: 20vw;
+}
+
+.left_yellow {
+  margin-left: 8vw;
+  margin-top: 30vw;
+  position: absolute;
+  animation: small-swing 3s ease-in-out infinite;
+  animation-delay: 0.2s;
+  width: 12vw;
+  height: 9vw;
+}
+
+.left_yellow2{
+  margin-left: 17vw;
+  margin-top: 30vw;
+  position: absolute;
+  animation: small-swing 3s ease-in-out infinite;
+  animation-delay: 0.4s;
+  width: 12vw;
+  height: 9vw;
+}
+
+.left_yellow3 {
+  margin-left: 26vw;
+  margin-top: 30vw;
+  position: absolute;
+  animation: small-swing 3s ease-in-out infinite;
+  animation-delay: 0.8s;
+  z-index: 2;
+  width: 12vw;
+  height: 9vw;
+}
+
+.left_green{
+  animation: small-swing 3s ease-in-out infinite;
+  animation-delay: 0.3s;
+  margin-left: 20vw;
+  margin-top: 36vw;
+  position: absolute;
+  z-index: 1;
+  width: 12vw;
+  height: 9vw;
+}
+
+.pink_flower{
+  animation: small-swing 3s ease-in-out infinite;
+  animation-delay: 0.1s;
+  margin-left: 19vw;
+  margin-top: 42vw;
+  position: absolute;
+  width: 51vw;
+  height: 13vw;
+  z-index: 2;
+}
+
+.green_flowers_list{
+  animation: small-swing 3s ease-in-out infinite;
+  animation-delay: 0.1s;
+  margin-left: 23vw;
+  margin-top: 25vw;
+  position: absolute;
+  width: 22vw;
+  height: 19vw;
+  z-index: 1;
+}
+.green_flowers_list2{
+  animation: small-swing 3s ease-in-out infinite;
+  animation-delay: 0.1s;
+  margin-left: 36vw;
+  margin-top: 25vw;
+  position: absolute;
+  width: 22vw;
+  height: 19vw;
+  z-index: 1;
+}
+
+.yellow_crug_listia{
+  margin-left: 25vw;
+  margin-top: 11vw;
+  position: absolute;
+  animation: small-swing 3s ease-in-out infinite;
+  width: 30vw;
+  height: 20vw;
+  animation-delay: 0.7s;
+}
+.blue_flower{
+  width: 32vw;
+  height: 13vw;
+  margin-left: 39vw;
+  margin-top: 34vw;
+  position: absolute;
+  animation: small-swing 3s ease-in-out infinite;
+  animation-delay: 1s;
+  z-index: 1;
+}
+
+.green_list{
+  width: 13vw;
+  height: 10vw;
+  margin-left: 62vw;
+  margin-top: 43vw;
+  position: absolute;
+  animation: small-swing 3s ease-in-out infinite;
+  animation-delay: 1s;
+  z-index: 1;
+}
+
+.big_green_list{
+  width: 24vw;
+  height: 21vw;
+  position: absolute;
+  animation: small-swing 3s ease-in-out infinite;
+  animation-delay: 0.3s;
+  z-index: 1;
+  margin-left: 44vw;
+  margin-top: 23vw;
+}
+
+.big_green_list2{
+  width: 25vw;
+  height: 22vw;
+  position: absolute;
+  animation: small-swing 3s ease-in-out infinite;
+  animation-delay: 0.5s;
+  z-index: 1;
+  margin-left: 57vw;
+  margin-top: 23vw;
+}
+
+.small_list_crug{
+  width: 12vw;
+  height: 9vw;
+  animation: small-swing 3s ease-in-out infinite;
+  animation-delay: 0.5s;
+  z-index: 2;
+  margin-left: 71vw;
+  margin-top: 14vw;
+  position: absolute;
+}
+
+.big_list_crug{
+  width: 25vw;
+  height: 22vw;
+  animation: small-swing 3s ease-in-out infinite;
+  animation-delay: 0.5s;
+  margin-left: 50vw;
+  margin-top: 4vw;
+  position: absolute;
+  z-index: 2;
+}
+
+.polycrug{
+  width: 20vw;
+  height: 10vw;
+  animation: small-swing 3s ease-in-out infinite;
+  animation-delay: 0.5s;
+  margin-left: 71.5vw;
+  margin-top: 5.5vw;
+  position: absolute;
+  z-index: 1;
+}
+
+.crug_crug{
+  width: 13vw;
+  height: 20vw;
+  animation: small-swing 3s ease-in-out infinite;
+  animation-delay: 0.5s;
+  margin-left: 75vw;
+  margin-top: 18vw;
+  position: absolute;
+  z-index: 1;
+}
+
+.pink_right{
+  width: 13vw;
+  height: 20vw;
+  animation: small-swing 3s ease-in-out infinite;
+  animation-delay: 0.5s;
+  margin-left: 75vw;
+  margin-top: 34vw;
+  position: absolute;
+  z-index: 1;
+}
+
+@keyframes small-swing {
+  0%   { transform: rotate(-4deg); }
+  50%  { transform: rotate(4deg); }
+  100% { transform: rotate(-4deg); }
+}
+
+.podval{
+  width: 100vw;
+  height: 41vw;
+  background-color: #DF6DB7;
+  position: relative;
+  margin-top: -2vw;
+}
+
+.venok1{
+  width: 29vw;
+  height: 30vw;
+  animation: spin 7s linear infinite;
+  margin-left: 3vw;
+  margin-top: 6vw;
+  position: absolute;
+}
+
+.venok2{
+  width: 29vw;
+  height: 30vw;
+  margin-left: 36vw;
+  position: absolute;
+  animation: spin 7s linear infinite;
+  margin-top: 6vw;
+}
+
+.venok3{
+  width: 29vw;
+  height: 30vw;
+  margin-left: 68vw;
+  position: absolute;
+  animation: spin 7s linear infinite;
+  margin-top: 6vw;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.curator{
+  font-size: 1.7vw;
+  color: white;
+  margin-top: 15vw;
+  margin-left: 14vw;
+  position: absolute;
+  font-family: "Helvetica";
+}
+
+.curator2{
+  font-size: 1.7vw;
+  color: white;
+  margin-top: 15vw;
+  margin-left: 47.5vw;
+  position: absolute;
+  font-family: "Helvetica";
+}
+
+.avtor{
+  font-size: 1.7vw;
+  color: white;
+  margin-top: 15vw;
+  margin-left: 81vw;
+  position: absolute;
+  font-family: "Helvetica";
+}
+
+.Kamila {
+  font-size: 2.7vw;
+  color: white;
+  margin-top: 18vw;
+  margin-left: 13vw;
+  position: absolute;
+  font-family: "Helvetica";
+}
+
+ .Nona{
+  font-size: 2.7vw;
+  color: white;
+  margin-top: 18vw;
+  margin-left: 45vw;
+  position: absolute;
+  font-family: "Helvetica";
+ 
+}
+
+.kz{
+  font-size: 2.7vw;
+  color: white;
+  margin-top: 18vw;
+  margin-left: 75vw;
+  position: absolute;
+  font-family: "Helvetica";
+}
+
+.Kamila1 {
+  font-size: 2.7vw;
+  color: white;
+  margin-top: 21vw;
+  margin-left: 12.7vw;
+  position: absolute;
+  font-family: "Helvetica";
+}
+
+ .Nona1 {
+  font-size: 2.7vw;
+  color: white;
+  margin-top: 21vw;
+  margin-left: 48vw;
+  position: absolute;
+  font-family: "Helvetica";
+ 
+}
+
+.kz1 {
+  font-size: 2.7vw;
+  color: white;
+  margin-top: 21vw;
+  margin-left: 79vw;
+  position: absolute;
+  font-family: "Helvetica";
+}
+
+
+
+
+
+
+
+.shesterenki    { order: 1 !important; } /* левый верх */
+.stebel_flower  { order: 2 !important; } /* ПРАВЫЙ ВЕРХ */
+.costumes       { order: 3 !important; } /* левый низ */
+.falling_objects{ order: 4 !important; } /* ПРАВЫЙ НИЗ */
+
+
+
+.shesterenki    { border: 3px solid red !important; }
+.falling_objects{ border: 3px solid blue !important; }
+.costumes       { border: 3px solid orange !important; }
+.stebel_flower  { border: 3px solid green !important; }
+
+
+
+
+.second_block {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* четыре плитки */
+.shesterenki,
+.stebel_flower,
+.costumes,
+.falling_objects {
+  flex: 0 0 50%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
