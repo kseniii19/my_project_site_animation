@@ -7,17 +7,12 @@
 }
 
 html, body {
-    width: 100vw;
-    min-height: 100vh; 
+    width: 100%;
+    min-height: 100vh;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 
-}
-
-@font-face {
-    font-family: "Helvetica";
-    src: url("../fonts/helvetica_regular.otf") format(opentype);
-    font-weight: 150 ;
-    font-style: normal;
 }
 
 .first_text_block{
@@ -26,12 +21,13 @@ html, body {
 }
 
 .first_block{
-    overflow: hidden;
+     overflow: hidden;
     white-space: nowrap; 
     width: 100vw;
     height: 60vw;
     position: relative; 
     background-color: #AAD1E5;
+
 
  
 }
@@ -61,11 +57,11 @@ html, body {
 }
 
 .rain {
-  position: absolute;
-  width: 100vw;
-  height: 27vw; 
-  z-index: 1;   
-  overflow: hidden;
+   position: absolute;
+    width: 100%;
+    height: 27vw;
+    z-index: 1;
+    overflow: hidden;
  
  
 }
@@ -179,7 +175,7 @@ html, body {
 
 .center_buton {
   position: absolute;
-  top: 17vw;
+  bottom: -11vw;
   left: 32vw;
   height: 32vw;
   width: 36vw;
@@ -190,7 +186,7 @@ html, body {
 
 .center_flower {
   position: absolute;
-  top: 17vw;
+   bottom: -11vw;
   left: 32vw;
   width: 36vw;
   height: 34vw;
@@ -432,36 +428,45 @@ html, body {
   }
 }
 
-.second_block {
-  width: 100vw;
-  height: 94vw;  
-  display: flex;
-  flex-wrap: wrap;
-}
-.shesterenki{
-  width: 50vw;
-  height: 61vw;
-  position: relative;
-  background-color: #EADA9D;
- 
-}
+@media screen and (min-width: 1366px) /*  мобилка  */  {
 
-.round1 {
-  position: absolute;
-  width: 31vw;
-  height: 32vw;
-  top: 26vw;
-  left: 15vw; 
-  animation: rotate-right 5s linear infinite;
-}
+  .second_block {
+    width: 100%;              
+      height: 96vw;            
+      display: grid;
+      grid-template-columns: 1fr 1fr; 
+      grid-template-rows: 32vw 32vw 32vw;     /* 2 ряда по 47vw каждый */
+      gap: 0;
+      position: relative;       /* для absolute внутри */
+      margin: 0;
+      background: transparent;  /* или нужный фон */
+      overflow: hidden;    
+  }
+  .shesterenki{
+      grid-row: 1 / span 2;            /* 1-й ряд (47vw) */
+      grid-column: 1;         /* 1-я колонка (50vw) */
+      height: 64vw;           /* помещается в 47vw */
+      background-color: #EADA9D;
+      position: relative;
+  }
 
-.round2 {
-  width: 31vw;
-  height: 32vw;
-  position: absolute;
-  top: 2vw;
-  left: 2vw;
-  animation: rotate-left 5s linear infinite;
+  .round1 {
+    position: absolute;
+    width: 31vw;
+    height: 32vw;
+    top: 26vw;
+    left: 15vw; 
+    animation: rotate-right 5s linear infinite;
+  }
+
+  .round2 {
+    width: 31vw;
+    height: 32vw;
+    position: absolute;
+    top: 2vw;
+    left: 2vw;
+    animation: rotate-left 5s linear infinite;
+  }
 }
 
 @keyframes rotate-right {
@@ -487,12 +492,12 @@ html, body {
 }
 
 .stebel_flower {
-  width: 50vw;
-  height: 30vw;
-  background-color: #9AC57C;
-  margin: 0;
-  position: relative;  
-  z-index: 4;
+   grid-row: 1;            /* 1-й ряд */
+    grid-column: 2;         /* 2-я колонка */
+    height: 32vw;           /* верхняя часть ряда */
+    background-color: #9AC57C;
+    position: relative;
+    z-index: 3;
 }
 
 .stebel{
@@ -577,13 +582,12 @@ html, body {
 }
 
 .falling_objects{
-  width: 56vw;
-  height: 65vw;
-  background-color: #AAD1E5;
-  margin-left: 50vw;
-  margin-top: 0vw;
-  position: relative;
-  overflow: hidden;
+   grid-row: 2 / span 2;        /* ✅ ОБА ряда = 94vw высоты */
+    grid-column: 2;         /* 2-я колонка = 50vw ширины */
+    height: 100%;           /* растягивается на 94vw */
+    background-color: #AAD1E5;
+    position: relative;
+    overflow: hidden;
 }
 
 .item:hover {
@@ -647,11 +651,11 @@ html, body {
 
 
 .costumes {
-  width: 50vw;
-  height: 33vw;
-  background-color: #9AC57C;
-  margin-top: -33vw;
-  position: relative;
+  grid-row: 3;            /* 2-й ряд (47vw) */
+    grid-column: 1;         /* 1-я колонка */
+    height: 32vw;           /* верх 2-го ряда */
+    background-color: #9AC57C;
+    position: relative;
 }
 
 .costume1, .costume2, .costume3, .costume4 {
@@ -727,10 +731,10 @@ html, body {
 }
 
 .third_block {
-  overflow: hidden;
-  width: 100vw;
-  height: 28vw;
-  background: #F9E1F1;
+  width: 100%;
+    height: 28vw;
+    overflow: hidden;
+    background: #F9E1F1;
 }
 
 .flower_line {
@@ -854,12 +858,13 @@ html, body {
 .projector {
   width: 50vw;
   height: 50vw;
-  flex: 0 0 auto;
+  flex: 0 0 auto; 
   background-color: #AAD1E5;
   display: flex;
   margin-left: 2vw;
   position: relative;
   overflow: hidden;
+
 }
 
 .projector_flower {
@@ -1152,7 +1157,6 @@ html, body {
   height: 41vw;
   background-color: #DF6DB7;
   position: relative;
-  margin-top: -2vw;
 }
 
 .venok1{
@@ -1271,40 +1275,4 @@ html, body {
 }
 
 
-
-
-
-
-
-.shesterenki    { order: 1 !important; } /* левый верх */
-.stebel_flower  { order: 2 !important; } /* ПРАВЫЙ ВЕРХ */
-.costumes       { order: 3 !important; } /* левый низ */
-.falling_objects{ order: 4 !important; } /* ПРАВЫЙ НИЗ */
-
-
-
-.shesterenki    { border: 3px solid red !important; }
-.falling_objects{ border: 3px solid blue !important; }
-.costumes       { border: 3px solid orange !important; }
-.stebel_flower  { border: 3px solid green !important; }
-
-
-
-
-.second_block {
-  width: 100vw;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/* четыре плитки */
-.shesterenki,
-.stebel_flower,
-.costumes,
-.falling_objects {
-  flex: 0 0 50%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+  

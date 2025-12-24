@@ -1,20 +1,16 @@
 
 
-@media screen and (min-width: 451px) and (max-width: 768px) {
-/*    планшет мини */
+/* @media screen and (min-width: 451px) and (max-width: 768px) {
 }
 
 @media screen and (min-width: 769px) and (max-width:  1366px) {
-/*  планшет про */
 }
 
 @media screen and (min-width:  1366px) and (max-width: 1440px) {
-/* маленькие ноуты */
 }
 
 @media screen and (min-width: 1441px) and (max-width: 1920px) {
-/* desctop */
-}
+} */
 
 
 @media screen and (min-width: 1px) and (max-width: 450px) /*  мобилка  */  {
@@ -22,13 +18,15 @@
 * { 
     margin: 0 !important; 
     padding: 0 !important;
-    box-sizing: border-box !important; }
+    box-sizing: border-box !important; 
+}
   
 
 html, body {
     width: 100vw;
     min-height: 100vh; 
     overflow-x: hidden;
+    flex-direction: column;
 }
 
 
@@ -40,6 +38,8 @@ html, body {
     position: relative; 
     background-color: #AAD1E5;
     margin-bottom: 0 !important;
+   
+  
 }
 
 
@@ -116,7 +116,7 @@ html, body {
 .three_flowers {
   margin-top: 0vh;
   position: relative;
-  height: 87vh;
+  height: 100vh;
   overflow: visible;
 }
 
@@ -138,7 +138,7 @@ html, body {
 
 .center_buton {
   position: absolute;
-  bottom: -2vh;
+  bottom: 8vh;
   left: 3vw;
   height: 97vw;
   width: 91vw;
@@ -149,7 +149,7 @@ html, body {
 
 .center_flower {
   position: absolute;
-  bottom: -2vh;
+  bottom: 8vh;
   left: 2vw;
   width: 94vw;
   height: 90vw;
@@ -203,6 +203,7 @@ html, body {
   width: 100vw;
   height: 60vh;
   position: relative;
+  background-color: #EADA9D;
 }
 
 .round1 {
@@ -211,6 +212,7 @@ html, body {
   height: 65vw;
   top: 55vw;
   left: 31vw; 
+  animation: rotate-right 5s linear infinite;
 }
 
 .round2 {
@@ -219,24 +221,26 @@ html, body {
   position: absolute;
   top: 6vw;
   left: 5vw;
+  animation: rotate-left 5s linear infinite;
 }
 
 .stebel_flower {
   width: 100vw;
-  height: 50vh;
+  height: 45vh;
   background-color: #9AC57C;
-  position: absolute;
-  top: 60vh;
+  position: relative;
+  top: 0vh;
   left: 0vw;
 }
 
 .stebel {
   width: 84vw;
   height: 40vh;
-  top: -14vh;
+  top: -17vh;
   left: 50vw;
   transform: rotate(90deg); 
   transform-origin: left center;
+  position: absolute;
 }
 
 
@@ -244,9 +248,9 @@ html, body {
   width: 100vw;
   height: 60vh;
   background-color: #AAD1E5;
-  position: absolute;
+  position: relative;
   overflow: hidden;
-  top: 110vh;
+  top: 0vh;
   left: 0;
   
 }
@@ -283,11 +287,12 @@ html, body {
 
 
 .costumes {
-    width: 100vw !important;
-    height: 30vh !important; 
-    background-color: #9AC57C !important;
-    position: absolute;
-    top: 170vh;
+    width: 100vw;
+    height: 35vh; 
+    background-color: #9AC57C;
+    position: relative;
+    top: 0vh;
+    z-index: 3; 
   }
 
   
@@ -301,40 +306,40 @@ html, body {
   animation-name: costumes-rotate;
   animation-delay: 0s;
   left: 45vw;
-  top: 4vh;
-  position: absolute !important;
+  top: 5vh;
+  position: absolute;
 }
 .costume2 {
   animation-name: costumes-rotate;
   animation-delay: 0.3s;
   animation-direction: alternate-reverse;
   left: 34vw;
-  top: 4vh; 
-  position: absolute !important;
+  top: 5vh; 
+  position: absolute;
 }
 .costume3 {
   animation-name: costumes-rotate;
   animation-delay: 0.6s;
   left: 26vw;
-  top: 3.5vh;
-  position: absolute !important;
+  top: 4.5vh;
+  position: absolute;
 }
 .costume4 {
   animation-name: costumes-rotate;
   animation-delay: 0.9s;
   animation-direction: alternate-reverse;
   left: 14vw;
-  top: 3vh;
+  top: 4vh;
   position: absolute;
 }
 
 .veshalka {
   left: 27vw;
-  top: 4vw; 
+  top: 5vw; 
   width: 45vw; 
   height: 12vw;
-  position: relative;
-  z-index: 4; 
+  position: absolute;
+  z-index: 3; 
 }
 
 .third_block {
@@ -747,16 +752,9 @@ html, body {
 
 
 
-
-
-
-
-
-
-
-
-@media screen and (min-width: 768px) and (max-width:  1366px) {
+@media screen and (min-width: 451px) and (max-width: 1365px) {
 /*  планшет про */
+
 * {
     margin: 0;
     padding: 0;
@@ -776,11 +774,10 @@ html, body {
 }
 
 .first_block{
-    overflow: hidden;
-    white-space: nowrap; 
-    width: 100vw;
-    height: 90vh;
-    position: relative; 
+    position: relative !important;  /* ← КРИТИЧНО! */
+    height: 90vh !important;
+    width: 100% !important;        /* НЕ 100vw */
+    overflow: hidden !important;
     background-color: #AAD1E5;
  
 }
@@ -793,7 +790,7 @@ html, body {
     transition: color 0.4s ease;  
     flex-shrink: 0; 
     margin-top: -1vw;
-    font-size: clamp(8vw, 12vw, 150px);  
+    font-size: clamp(10vw, 14vw, 180px);  
 }
 
 
@@ -811,8 +808,8 @@ html, body {
   animation-name: fall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  width: 7vw;
-  height: 9vw; 
+  width: 5vw;
+  height: 7vw; 
 
 }
 
@@ -860,8 +857,8 @@ html, body {
 
 .left_buton {
   position: absolute;
-  margin-top: 45vh;
-  margin-left: 0.5vw;
+  bottom: -12vh;
+  left: 0.5vw;
   width: 30vw;
   height: 28vh;
   opacity: 1;
@@ -871,8 +868,8 @@ html, body {
 
 .left_flower {
   position: absolute;
-  margin-top: 47vh;
-  margin-left: 0.5vw;
+  bottom: -12vh;
+  left: 0vw;
   width: 30vw;
   height: 28vh;
   opacity: 0;
@@ -882,8 +879,8 @@ html, body {
 
 .right_buton {
   position: absolute;
-  margin-left: 70vw;
-  margin-top: 45vh;
+  left: 2vw;
+  bottom: -12vh;
   width: 30vw;
   height: 28vh;
   opacity: 1;
@@ -893,8 +890,8 @@ html, body {
 
 .right_flower {
   position: absolute;
-  margin-left: 70vw;
-  margin-top: 47vh;
+  left: 2vw;
+  bottom: -12vh;
   width: 30vw;
   height: 28vh;
   opacity: 0;
@@ -910,7 +907,7 @@ html, body {
 
 .center_buton {
   position: absolute;
-  bottom: -16vh;
+  bottom: -12vh;
   left: 27vw;
   height: 47vh;
   width: 45vw;
@@ -921,7 +918,7 @@ html, body {
 
 .center_flower {
   position: absolute;
-  bottom: -19vh;
+  bottom: -15vh;
   left: 27.5vw;
   width: 45vw;
   height: 47vh;
@@ -932,7 +929,7 @@ html, body {
 
 
 .raschestka{
-  margin-top: 42vh;
+  margin-top: 40vh;
   margin-left: 53vw;
   position: absolute;
   z-index: 3;
@@ -947,7 +944,7 @@ html, body {
   width: 5vw;
   height:15vw;
   margin-left: 86vw;
-  margin-top: 53vh;
+  margin-top: 49vh;
   position: absolute;
   opacity: 0;
   z-index: 4;
@@ -958,14 +955,12 @@ html, body {
   width: 5vw;
   height:15vw;
   margin-left: 83vw;
-  margin-top: 52vh;
+  margin-top: 48vh;
   position: absolute;
   z-index: 3;
   opacity: 0;
   animation: gubi-opacity 6s infinite;
 }
-
-
 
 .blush{
    opacity: 1;                     
@@ -978,7 +973,7 @@ html, body {
 .rumana{
   width: 3vw;
   height: 3vw;
-  margin-top: 56vh;
+  margin-top: 53vh;
   margin-left: 10vw;
   position: absolute;
   z-index: 2;
@@ -987,14 +982,14 @@ html, body {
 .rumana2{
   width: 3vw;
   height: 3vw;
-  margin-top: 56vh;
+  margin-top: 53vh;
   margin-left: 19vw;
   position: absolute;
   z-index: 2;
 }
 
 .kist{
-  margin-top: 49vh;
+  margin-top: 46vh;
   width: 8vw;
   height: 19vw;
   margin-left: 19vw;
@@ -1005,17 +1000,25 @@ html, body {
 }
 
 
+
 .second_block {
-  width: 100vw;
-  height: 70vh;  
-  position: relative;
- 
+   display: grid !important;
+    grid-template-columns: 1fr 1fr !important;      
+    grid-template-rows: 33vw 33vw 33vw !important;  
+    height: 99vw !important;        
+    width: 100vw !important;
+    margin: 0 !important;
+    gap: 0 !important;
+    position: relative !important;
 }
 .shesterenki{
-  width: 50vw;
-  height: 61vw;
-  position: relative;
-  background-color: #EADA9D;
+   grid-row: 1 / span 2 !important; 
+    grid-column: 1 !important;
+    position: relative !important;
+    width: 100% !important;    
+    height: 100% !important;  
+    margin: 0 !important;
+    background-color: #EADA9D !important;
 }
 
 .round1 {
@@ -1041,12 +1044,15 @@ html, body {
 }
 
 .stebel_flower {
-  width: 50vw;
-  height: 30vw;
-  background-color: #9AC57C;
-  top: 0vh;
-  left: 50vw;
-  position: absolute;  
+  grid-row: 1 !important; 
+    grid-column: 2 !important; 
+    position: relative !important;
+    width: 100% !important;   
+    height: 100% !important;  
+    margin: 0 !important;     
+    background-color: #9AC57C !important;
+    left: 0 !important;       
+    top: 0 !important;
 }
 
 .stebel{
@@ -1099,13 +1105,15 @@ html, body {
 
 
 .falling_objects{
-  width: 50vw;
-  height: 67vw;
-  background-color: #AAD1E5;
-  overflow: hidden;
-  position: relative; 
-  margin-left: 50vw;
-  margin-top: -34vw;
+   grid-row: 2 / span 2 !important; 
+    grid-column: 2 !important; 
+    position: relative !important;
+    width: 100% !important;    
+    height: 100% !important;   
+    margin: 0 !important;     
+    background-color: #AAD1E5 !important;
+    left: 0 !important;
+    top: 0 !important;
 }
 
 
@@ -1151,11 +1159,13 @@ html, body {
 
 
 .costumes {
-  width: 50vw;
-  height: 33vw;
-  background-color: #9AC57C;
-  margin-top: -32vw;
-  position: relative;
+ grid-row: 3 !important; 
+    grid-column: 1 !important; 
+    position: relative !important;
+    width: 100% !important;    
+    height: 100% !important;   
+    margin: 0 !important;     
+    background-color: #9AC57C !important;
 }
 .costume1, .costume2, .costume3, .costume4 {
   animation-duration: 2.7s;
@@ -1203,10 +1213,8 @@ html, body {
   height: 26vw;
 }
 
-
-
 .veshalka{
-  margin-left: 8vw;
+  margin-left: 3vw;
   margin-top: -1.2vw;
   width: 30vw;
   height: 10vw;
@@ -1535,8 +1543,6 @@ html, body {
   z-index: 1;
 }
 
-
-
 .podval{
   width: 100vw;
   height: 50vw;
@@ -1657,8 +1663,6 @@ html, body {
   font-family: "Helvetica";
 }
 
-
-
-
-
 }
+  
+
