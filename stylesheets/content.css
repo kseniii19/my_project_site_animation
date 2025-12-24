@@ -464,23 +464,6 @@ html, body {
     animation: rotate-left 5s linear infinite;
   }
 
-  @keyframes rotate-right {
-    0% { 
-      transform: rotate(0deg);
-    }
-    100% { 
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes rotate-left {
-    0% { 
-      transform: rotate(0deg);
-    }
-    100% { 
-      transform: rotate(-360deg);
-    } 
-  }
 
   .shesterenki:hover .round1, .shesterenki:hover .round2 {
     animation-duration: 3s; 
@@ -505,6 +488,23 @@ html, body {
 
 }
 
+  @keyframes rotate-right {
+    0% { 
+      transform: rotate(0deg);
+    }
+    100% { 
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes rotate-left {
+    0% { 
+      transform: rotate(0deg);
+    }
+    100% { 
+      transform: rotate(-360deg);
+    } 
+  }
 
 .tsvetok1{
   width: 18vw;
