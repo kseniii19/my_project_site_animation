@@ -23,9 +23,10 @@
   
 
 html, body {
-    width: 100vw;
+    width: 100%;
     min-height: 100vh; 
     overflow-x: hidden;
+    display: flex;
     flex-direction: column;
 }
 
@@ -38,8 +39,6 @@ html, body {
     position: relative; 
     background-color: #AAD1E5;
     margin-bottom: 0 !important;
-   
-  
 }
 
 
@@ -57,7 +56,7 @@ html, body {
 
 .rain {
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 87vh; 
   z-index: 1;   
   overflow: hidden;
@@ -193,15 +192,28 @@ html, body {
 }
 
 .second_block {
-  width: 100vw;
+  width: 100%;
   height: 200vh; 
+  display: flex;
+  flex-direction: column;
   margin: 0;
   position: relative;
 }
 
 .shesterenki{
-  width: 100vw;
-  height: 60vh;
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  background-color: #EADA9D;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shesterenki_box{
+  width: 100%;
+  height: 120vw;
   position: relative;
   background-color: #EADA9D;
 }
@@ -225,27 +237,75 @@ html, body {
 }
 
 .stebel_flower {
-  width: 100vw;
-  height: 45vh;
+  width: 100%;
+  height: 60vh;
   background-color: #9AC57C;
   position: relative;
   top: 0vh;
   left: 0vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stebel_flower_box {
+  height: 100vw;
+  width: 100vw;
+  position: absolute;
 }
 
 .stebel {
-  width: 84vw;
-  height: 40vh;
-  top: -17vh;
-  left: 50vw;
+  width: 100vw;
+  height: 60vw;
+  top: 0vw;
+  left: 80vw;
   transform: rotate(90deg); 
-  transform-origin: left center;
+  transform-origin: left top;
   position: absolute;
+}
+
+.tsvetok1{
+  width: 28vw;
+  height: 20vw;
+  position: absolute;
+  z-index: 2;
+  top: 6vw;
+  left: 35vw;
+  rotate: 0deg;
+  transform: scaleX(-1);
+  transform-origin: center center;
+  animation: move_tsvetok1 3s ease-in-out infinite ;
+}
+
+.tsvetok2{
+  width: 28vw;
+  height: 20vw;
+  position: absolute;
+  z-index: 2;
+  top: 38vw;
+  left: 35vw;
+  rotate: 0deg;
+  transform: scaleX(-1);
+  transform-origin: center center;
+  animation: move_tsvetok2 2s ease-in-out infinite ;
+}
+
+.tsvetok3{
+  width: 28vw;
+  height: 20vw;
+  position: absolute;
+  z-index: 2;
+  top: 72vw;
+  left: 35vw;
+  rotate: 0deg;
+  transform: scaleX(-1);
+  transform-origin: center center;
+  animation: move_tsvetok3 4s ease-in-out infinite ;
 }
 
 
 .falling_objects{
-  width: 100vw;
+  width: 100%;
   height: 60vh;
   background-color: #AAD1E5;
   position: relative;
@@ -287,14 +347,21 @@ html, body {
 
 
 .costumes {
-    width: 100vw;
-    height: 35vh; 
+    width: 100%;
+    height: 48vh; 
     background-color: #9AC57C;
     position: relative;
     top: 0vh;
-    z-index: 3; 
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
+.costumes_box {
+  position: relative;
+  height: 60vw;
+} 
   
  .costume1, .costume2, .costume3, .costume4 {
     width: 38vw;  
@@ -306,7 +373,7 @@ html, body {
   animation-name: costumes-rotate;
   animation-delay: 0s;
   left: 45vw;
-  top: 5vh;
+  top: 6vw;
   position: absolute;
 }
 .costume2 {
@@ -314,14 +381,14 @@ html, body {
   animation-delay: 0.3s;
   animation-direction: alternate-reverse;
   left: 34vw;
-  top: 5vh; 
+  top: 5vw; 
   position: absolute;
 }
 .costume3 {
   animation-name: costumes-rotate;
   animation-delay: 0.6s;
   left: 26vw;
-  top: 4.5vh;
+  top: 4.5vw;
   position: absolute;
 }
 .costume4 {
@@ -329,15 +396,15 @@ html, body {
   animation-delay: 0.9s;
   animation-direction: alternate-reverse;
   left: 14vw;
-  top: 4vh;
+  top: 3.5vw;
   position: absolute;
 }
 
 .veshalka {
   left: 27vw;
-  top: 5vw; 
+  top: 1.3vw; 
   width: 45vw; 
-  height: 12vw;
+  height: 10vw;
   position: absolute;
   z-index: 3; 
 }
@@ -347,17 +414,24 @@ html, body {
   position: relative;
   background: #F9E1F1;
   height: 15vh; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .flower_line {
   width: 100%;
-  height: 10vh;
+  height: 30vw;
+  position: relative;
 }
 
 .flower_track {
   display: flex;
   gap: 21vw; 
   animation: scroll 4s linear infinite;
+  
 }
 
 .flower_line_flower1,
@@ -392,7 +466,7 @@ html, body {
 }
 
 .fourth_block{
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: relative;
   display: block;
@@ -424,7 +498,7 @@ html, body {
 .projector {
    background-color: #AAD1E5;
    height: 50vh; 
-   width: 100vw;
+   width: 100%;
    position: relative; 
    top: 0; 
   }
@@ -441,7 +515,7 @@ html, body {
   }
 
 .fonar {
-  width: 100vw;
+  width: 100%;
   height: 60vh;
   position: absolute;
   top: -5vh;
@@ -450,16 +524,19 @@ html, body {
   }
 
 .fifth_block{
-    width: 100vw;
+    width: 100%;
     height: 35vh; 
     background-color: #F9E1F1;
     margin: 0; 
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .composition{
-    position: absolute;
-    top: 10%;
+    position: relative;
+    height: 50vw;
     left: 5%;
 }
 
@@ -629,87 +706,125 @@ html, body {
 }
 
 .podval {
-  width: 100vw;
+  width: 100%;
   background-color: #DF6DB7;
   position: relative; 
   margin-top: 0;
-  height: 110vh; 
+  height: 120vh; 
   margin-top: 0;
+  display: flex;
+  flex-direction: column;
   }
+
+.podpis1 {
+  height: 40vh;
+  position: relative;   
+}
+
+.podpis2 {
+  height: 40vh;
+  position: relative;   
+}
+
+.podpis3 {
+  height: 40vh;
+  position: relative;     
+}
+
 
 .venok1{
   width: 60vw;
-  height: 40vh;
+  height: 60vw;
   animation: spin 7s linear infinite;
   left: 20vw;
   position: absolute;
-  top: -3vh;
+  top: 20vw;
 }
-
-.venok2{
-  width: 60vw;
-  height: 40vh;
-  left: 20vw;
-  position: absolute;
-  animation: spin 7s linear infinite;
-  top: 28vh;
-}
-
-.venok3{
-  width: 60vw;
-  height: 40vh;
-  left: 20vw;
-  position: absolute;
-  animation: spin 7s linear infinite;
-  top: 59vh;
-}
-
 
 .curator{
   font-size: 4vw;
   color: white;
-  top: 25vw;
   left: 43vw;
   position: absolute;
   font-family: "Helvetica";
-}
-
-.curator2{
-  font-size: 4vw;
-  color: white;
-  top: 43vh;
-  left: 43vw;
-  position: absolute;
-  font-family: "Helvetica";
-}
-
-.avtor{
-  font-size: 4vw;
-  color: white;
-  top: 73vh;
-  left: 44vw;
-  position: absolute;
-  font-family: "Helvetica";
+  top: 38vw;
 }
 
 .Kamila {
   font-size: 6vw;
   color: white;
-  top: 34vw;
   left: 41vw;
+  position: absolute;
+  font-family: "Helvetica";
+  top: 45vw;
+}
+
+.Kamila1 {
+  font-size: 6vw;
+  color: white;
+  left: 40vw;
+  position: absolute;
+  font-family: "Helvetica";
+  top: 51vw;
+}
+
+
+.venok2{
+  width: 60vw;
+  height: 60vw;
+  left: 20vw;
+  animation: spin 7s linear infinite;
+  position: absolute;
+  top: 20vw;
+}
+
+.curator2{
+  font-size: 4vw;
+  color: white;
+  top: 38vw;
+  left: 43vw;
   position: absolute;
   font-family: "Helvetica";
 }
 
- .Nona{
+.Nona{
   font-size: 6vw;
   color: white;
-  top: 47vh;
+  top: 45vw;
   left: 38vw;
   position: absolute;
   font-family: "Helvetica";
  
 }
+
+.Nona1 {
+  font-size: 6vw;
+  color: white;
+  top: 51vw;
+  left: 44vw;
+  position: absolute;
+  font-family: "Helvetica";
+ 
+}
+
+.venok3{
+  width: 60vw;
+  height: 60vw;
+  left: 20vw;
+  position: absolute;
+  animation: spin 7s linear infinite;
+  top: 20vw;
+}
+
+.avtor{
+  font-size: 4vw;
+  color: white;
+  left: 44vw;
+  position: absolute;
+  font-family: "Helvetica";
+  top: 38vw;
+}
+
 
 .kz{
   font-size: 6vw;
@@ -718,25 +833,7 @@ html, body {
   left: 33vw;
   position: absolute;
   font-family: "Helvetica";
-}
-
-.Kamila1 {
-  font-size: 6vw;
-  color: white;
-  top: 40vw;
-  left: 40vw;
-  position: absolute;
-  font-family: "Helvetica";
-}
-
- .Nona1 {
-  font-size: 6vw;
-  color: white;
-  top: 50vh;
-  left: 44vw;
-  position: absolute;
-  font-family: "Helvetica";
- 
+  top: 45vw;
 }
 
 .kz1 {
@@ -746,7 +843,8 @@ html, body {
   left: 40vw;
   position: absolute;
   font-family: "Helvetica";
-} 
+  top: 51vw;
+}
 
 }
 
@@ -762,7 +860,7 @@ html, body {
 }
 
 html, body {
-    width: 100vw;
+    width: 100%;
     min-height: 100vh; 
     overflow-x: hidden;
 
@@ -774,10 +872,10 @@ html, body {
 }
 
 .first_block{
-    position: relative !important;  /* ← КРИТИЧНО! */
-    height: 90vh !important;
-    width: 100% !important;        /* НЕ 100vw */
-    overflow: hidden !important;
+    position: relative ;  
+    height: 90vh ;
+    width: 100%;       
+    overflow: hidden;
     background-color: #AAD1E5;
  
 }
@@ -796,8 +894,8 @@ html, body {
 
 .rain {
   position: absolute;
-  width: 100vw;
-  height: 90vh; 
+  width: 100%;
+  height: 60vh; 
   z-index: 1;   
   overflow: hidden;
 }
@@ -836,7 +934,6 @@ html, body {
 .kaply21 { left: 77%;  animation-duration: 2.4s; animation-delay: 1.2s; }
 .kaply22 { left: 81%;  animation-duration: 2.0s; animation-delay: 1.8s; }
 .kaply23 { left: 88%;  animation-duration: 2.3s; animation-delay: 0.7s; }
-.kaply24 { left: 94%;  animation-duration: 2.8s; animation-delay: 1.4s; }
 .kaply25 { left: 13%;  animation-duration: 2.2s; animation-delay: 2.3s; }
 .kaply26 { left: 26%;  animation-duration: 2.5s; animation-delay: 2.0s; }
 .kaply27 { left: 41%;  animation-duration: 2.1s; animation-delay: 2.5s; }
@@ -857,10 +954,10 @@ html, body {
 
 .left_buton {
   position: absolute;
-  bottom: -12vh;
+  bottom: -2vw;
   left: 0.5vw;
   width: 30vw;
-  height: 28vh;
+  height: 35vw;
   opacity: 1;
   z-index: 2;
   animation: buton 6s infinite;
@@ -868,10 +965,10 @@ html, body {
 
 .left_flower {
   position: absolute;
-  bottom: -12vh;
+  bottom: -5vw;
   left: 0vw;
   width: 30vw;
-  height: 28vh;
+  height: 35vw;
   opacity: 0;
   z-index: 3;
   animation: flower 6s infinite;
@@ -879,10 +976,10 @@ html, body {
 
 .right_buton {
   position: absolute;
+  bottom: -2vw;
   left: 2vw;
-  bottom: -12vh;
   width: 30vw;
-  height: 28vh;
+  height: 35vw;
   opacity: 1;
   z-index: 2;
   animation: buton 6s infinite;
@@ -890,10 +987,10 @@ html, body {
 
 .right_flower {
   position: absolute;
+  bottom: -5vw;
   left: 2vw;
-  bottom: -12vh;
   width: 30vw;
-  height: 28vh;
+  height: 35vw;
   opacity: 0;
   z-index: 3;
   animation: flower 6s infinite;
@@ -901,15 +998,16 @@ html, body {
 
 .three_flowers {
   position: absolute;
-  height: 60vh;
-  top: 20vh;
+  height: 50vh;
+  width: 100%;
+  top: 40vh;
 }
 
 .center_buton {
   position: absolute;
-  bottom: -12vh;
+  bottom: -2vw;
   left: 27vw;
-  height: 47vh;
+  height: 47vw;
   width: 45vw;
   opacity: 1;
   z-index: 2;
@@ -918,10 +1016,10 @@ html, body {
 
 .center_flower {
   position: absolute;
-  bottom: -15vh;
+  bottom: -5vw;
   left: 27.5vw;
   width: 45vw;
-  height: 47vh;
+  height: 47vw;
   opacity: 0;
   z-index: 3;
   animation: flower 6s infinite;
@@ -929,7 +1027,7 @@ html, body {
 
 
 .raschestka{
-  margin-top: 40vh;
+  bottom: 25vw;
   margin-left: 53vw;
   position: absolute;
   z-index: 3;
@@ -942,9 +1040,9 @@ html, body {
 
 .lipstick{
   width: 5vw;
-  height:15vw;
-  margin-left: 86vw;
-  margin-top: 49vh;
+  height: 15vw;
+  margin-left: 84vw;
+  bottom: 7vw;
   position: absolute;
   opacity: 0;
   z-index: 4;
@@ -954,8 +1052,8 @@ html, body {
 .gubi{
   width: 5vw;
   height:15vw;
-  margin-left: 83vw;
-  margin-top: 48vh;
+  margin-left: 81vw;
+  bottom: 9vw;
   position: absolute;
   z-index: 3;
   opacity: 0;
@@ -963,7 +1061,11 @@ html, body {
 }
 
 .blush{
-   opacity: 1;                     
+   opacity: 1;   
+   bottom: 12vw;
+   left: 9vw;
+   width: 20vw;
+   height: 8vw;                  
    animation: rumana-opacity 6s infinite;
    position: absolute;
    z-index: 3;
@@ -973,8 +1075,8 @@ html, body {
 .rumana{
   width: 3vw;
   height: 3vw;
-  margin-top: 53vh;
-  margin-left: 10vw;
+  margin-top: 0vw;
+  margin-left: 0vw;
   position: absolute;
   z-index: 2;
 
@@ -982,17 +1084,18 @@ html, body {
 .rumana2{
   width: 3vw;
   height: 3vw;
-  margin-top: 53vh;
-  margin-left: 19vw;
+  margin-top: 0vw;
+  margin-left: 10vw;
   position: absolute;
   z-index: 2;
 }
 
 .kist{
-  margin-top: 46vh;
+  bottom: 11vw;
+  left: 8vw;
   width: 8vw;
   height: 19vw;
-  margin-left: 19vw;
+  margin-left: 12vw;
   position: absolute;
   z-index: 4;
   transform-origin: center center;             
@@ -1006,7 +1109,7 @@ html, body {
     grid-template-columns: 1fr 1fr !important;      
     grid-template-rows: 33vw 33vw 33vw !important;  
     height: 99vw !important;        
-    width: 100vw !important;
+    width: 100% !important;
     margin: 0 !important;
     gap: 0 !important;
     position: relative !important;
@@ -1026,7 +1129,7 @@ html, body {
   width: 31vw;
   height: 32vw;
   top: 26vw;
-  left: 15vw; 
+  left: 14vw; 
   animation: rotate-right 5s linear infinite;
 }
 
@@ -1035,7 +1138,7 @@ html, body {
   height: 32vw;
   position: absolute;
   top: 2vw;
-  left: 2vw;
+  left: 1vw;
   animation: rotate-left 5s linear infinite;
 }
 
@@ -1058,7 +1161,7 @@ html, body {
 .stebel{
   width: 44vw;
   height: 22vw;
-  top: 0vw;
+  top: 5vw;
   left: 2.3vw;
   position: absolute;
 }
@@ -1222,7 +1325,7 @@ html, body {
 
 .third_block {
   overflow: hidden;
-  width: 100vw;
+  width: 100%;
   height: 28vw;
   background: #F9E1F1;
 }
@@ -1347,7 +1450,7 @@ html, body {
 
 
 .fifth_block{
-  width: 100vw;
+  width: 100%;
   height: 60vw;
   background-color: #F9E1F1;
 }
@@ -1544,7 +1647,7 @@ html, body {
 }
 
 .podval{
-  width: 100vw;
+  width: 100%;
   height: 50vw;
   background-color: #DF6DB7;
   position: relative;

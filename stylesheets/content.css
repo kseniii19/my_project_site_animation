@@ -1,17 +1,10 @@
 
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 html, body {
     width: 100%;
     min-height: 100vh;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
 
 }
 
@@ -23,7 +16,7 @@ html, body {
 .first_block{
      overflow: hidden;
     white-space: nowrap; 
-    width: 100vw;
+    width: 100%;
     height: 60vw;
     position: relative; 
     background-color: #AAD1E5;
@@ -125,7 +118,7 @@ html, body {
 
 .left_buton {
   position: absolute;
-  margin-top: 22vw;
+  bottom: -2vw;
   margin-left: 0.5vw;
   width: 31vw;
   height: 28vw;
@@ -136,8 +129,8 @@ html, body {
 
 .left_flower {
   position: absolute;
-  margin-top: 22vw;
   margin-left: 0.5vw;
+  bottom: -2vw;
   width: 31vw;
   height: 28vw;
   opacity: 0;
@@ -148,7 +141,7 @@ html, body {
 .right_buton {
   position: absolute;
   margin-left: 68vw;
-  margin-top: 22vw;
+  bottom: -2vw;
   width: 31vw;
   height: 28vw;
   opacity: 1;
@@ -159,7 +152,7 @@ html, body {
 .right_flower {
   position: absolute;
   margin-left: 68vw;
-  margin-top: 22vw;
+  bottom: -2vw;
   width: 31vw;
   height: 28vw;
   opacity: 0;
@@ -168,14 +161,16 @@ html, body {
 }
 
 .three_flowers {
-  position: relative;
-  height: 69%;
+  position: absolute;
+  height: 69vw;
+  bottom: 0vw;
+  width: 100%;
   
 }
 
 .center_buton {
   position: absolute;
-  bottom: -11vw;
+  bottom: -2vw;
   left: 32vw;
   height: 32vw;
   width: 36vw;
@@ -186,7 +181,7 @@ html, body {
 
 .center_flower {
   position: absolute;
-   bottom: -11vw;
+  bottom: -2vw;
   left: 32vw;
   width: 36vw;
   height: 34vw;
@@ -233,10 +228,9 @@ html, body {
   }  
 }
 
-
 .raschestka{
-  margin-top: 15vw;
-  margin-left: 51vw;
+  bottom: 19vw;
+  margin-left: 53vw;
   position: absolute;
   z-index: 3;
   width: 8vw;
@@ -276,7 +270,7 @@ html, body {
   width: 5vw;
   height:15vw;
   margin-left: 84vw;
-  margin-top: 23vw;
+  bottom: 8vw;
   position: absolute;
   opacity: 0;
   z-index: 4;
@@ -314,7 +308,7 @@ html, body {
   width: 5vw;
   height:15vw;
   margin-left: 81vw;
-  margin-top: 22vw;
+  bottom: 9vw;
   position: absolute;
   z-index: 3;
   opacity: 0;
@@ -350,6 +344,11 @@ html, body {
    animation: rumana-opacity 6s infinite;
    position: absolute;
    z-index: 3;
+   bottom: 14vw;
+   left: 10vw;
+   width: 20vw;
+   height: 6vw;  
+   
 }
 
 @keyframes rumana-opacity{
@@ -375,8 +374,6 @@ html, body {
 .rumana{
   width: 3vw;
   height: 3vw;
-  margin-top: 28vw;
-  margin-left: 10vw;
   position: absolute;
   z-index: 2;
 
@@ -384,17 +381,16 @@ html, body {
 .rumana2{
   width: 3vw;
   height: 3vw;
-  margin-top: 28vw;
-  margin-left: 19vw;
+  margin-left: 10vw;
   position: absolute;
   z-index: 2;
 }
 
 .kist{
-  margin-top: 19vw;
+  bottom: 10vw;
   width: 8vw;
   height: 19vw;
-  margin-left: 19vw;
+  margin-left: 20vw;
   position: absolute;
   z-index: 4;
   transform-origin: center center;             
@@ -467,46 +463,48 @@ html, body {
     left: 2vw;
     animation: rotate-left 5s linear infinite;
   }
-}
 
-@keyframes rotate-right {
-  0% { 
-    transform: rotate(0deg);
-   }
-  100% { 
-    transform: rotate(360deg);
-   }
-}
+  @keyframes rotate-right {
+    0% { 
+      transform: rotate(0deg);
+    }
+    100% { 
+      transform: rotate(360deg);
+    }
+  }
 
-@keyframes rotate-left {
-  0% { 
-    transform: rotate(0deg);
-   }
-  100% { 
-    transform: rotate(-360deg);
-   } 
-}
+  @keyframes rotate-left {
+    0% { 
+      transform: rotate(0deg);
+    }
+    100% { 
+      transform: rotate(-360deg);
+    } 
+  }
 
-.shesterenki:hover .round1, .shesterenki:hover .round2 {
-  animation-duration: 3s; 
-}
+  .shesterenki:hover .round1, .shesterenki:hover .round2 {
+    animation-duration: 3s; 
+  }
 
-.stebel_flower {
-   grid-row: 1;            /* 1-й ряд */
+  .stebel_flower {
+    grid-row: 1;            /* 1-й ряд */
     grid-column: 2;         /* 2-я колонка */
     height: 32vw;           /* верхняя часть ряда */
     background-color: #9AC57C;
     position: relative;
     z-index: 3;
+  }
+
+  .stebel{
+    width: 44vw;
+    height: 22vw;
+    margin-top: 4vw;
+    margin-left: 2.3vw;
+    position: relative;
+  }
+
 }
 
-.stebel{
-  width: 44vw;
-  height: 22vw;
-  margin-top: 4vw;
-  margin-left: 2.3vw;
-  position: relative;
-}
 
 .tsvetok1{
   width: 18vw;
@@ -949,7 +947,7 @@ html, body {
 
 
 .fifth_block{
-  width: 100vw;
+  width: 100%;
   height: 60vw;
   background-color: #F9E1F1;
   position: relative;
@@ -1153,7 +1151,7 @@ html, body {
 }
 
 .podval{
-  width: 100vw;
+  width: 100%;
   height: 41vw;
   background-color: #DF6DB7;
   position: relative;
@@ -1273,6 +1271,10 @@ html, body {
   position: absolute;
   font-family: "Helvetica";
 }
+
+
+
+
 
 
   
